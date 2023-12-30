@@ -1,0 +1,63 @@
+/* Custom styles for the modified carousel */
+.carousel-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 75pt;
+}
+
+.carousel-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(8px); /* Adjust the blur value as needed */
+}
+
+.carousel-image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-caption {
+    text-align: left;
+    max-width: 40%; /* Adjust the width as needed */
+    padding: 20px;
+    color: white;
+}
+
+.carousel-caption h5 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.carousel-caption .dynamic-name {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.carousel-caption .sc-detail {
+    margin-bottom: 10px;
+}
+
+.carousel-caption .sc-detail .scd-item {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.carousel-caption .desi-description {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.carousel-caption .desi-buttons {
+    margin-top: 10px;
+}
+
+.carousel-caption .desi-buttons a {
+    margin-right: 10px;
+}

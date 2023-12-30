@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% block title %}Verve-Vit{% endblock %}
+
+{% block content %}
+
+<style>
+  /* html,body{
+    background-color: #0b101a;
+  } */
+  .carousel {
+    height: 75vh;
+    min-width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  .carousel-item {
+    height: 100vh;
+  }
+
+  .carousel-caption {
+    position: absolute;
+    left: 0;
+    right: 50%; /* Occupy the left half of the container */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff; /* Text color */
+    z-index: 1;
+    overflow: hidden; /* Hide overflow content from the blurred part */
+  }
+
+  .blur-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Adjust the width of the blurred area */
+    height: 100%;
+    /* backdrop-filter: blur(5px); Adjust the blur amount as needed */
+    background: linear-gradient(to left, rgba(0,0,0, 0) 0%, rgba(0,0,0, 1) 100%);
+    /* background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%); */
+    z-index: 0;
+  }
+
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(70%) contrast(140%) sepia(8%) saturate(160%) blur(3%);
+  }
+  .slide,.cards,.carousel, .about{
+    margin: 0;
+    padding: 0;
+  }
+  #about-section{
+    text-align: center;
+    border: dotted;
+    padding: 1%;
+  }
+  .about{
+    padding: 1%;
+    background-color: #000;
+  }
+</style>
+
+<div class="slide row">
+  <div id="carouselVideoSlides" class="carousel" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselVideoSlides" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselVideoSlides" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselVideoSlides" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>        
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="blur-background"></div>
+        <img src="https://wallpapers.com/images/hd/spider-man-cool-hn7ew1a679keouky.jpg" class="img-fluid" alt="Image 1">
+        <div class="carousel-caption">
+            <h1>interaction</h1>
+            <p>One - One interaction whichever meadium you'd like.</p>
+        </div>    
+      </div>
+      <div class="carousel-item">
+        <div class="blur-background"></div>
+        <img src="https://wallpapers.com/images/hd/spider-man-cool-su1wjfkhwoi1b9ha.jpg" class="img-fluid" alt="Image 2">
+        <div class="carousel-caption">
+            <h1>Second slide label</h1>
+            <p>Some representative placeholder content for the first slide.</p>
+        </div>        
+      </div>
+      <div class="carousel-item">
+        <div class="blur-background"></div>
+        <img src="https://wallpapers.com/images/hd/spider-man-cool-9xyzta67zii3hvvs.jpg" class="img-fluid" alt="image 3">
+        <div class="carousel-caption">
+            <h1>Third slide label</h1>
+            <p>Some representative placeholder content for the first slide.</p>
+        </div>        
+      </div>
+    </div>
+  </div>
+</div>
+<div class="cards row">
+  {% include 'cards.html' %}
+</div>
+<div class="about row">
+  <div id="about-section" class="col-md-3">
+    <h1>Verve - Vit</h1>
+  </div>
+  <div class="col-md-9">
+    {% include 'scrol.html' %}
+  </div>
+</div>
+
+{% endblock %}

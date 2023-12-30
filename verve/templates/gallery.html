@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+{% block title %} Gallery of Year 2022 {% endblock %}
+{% block content%}
+
+
+<style>
+    html,body{
+        background-color: #ac9c9c;
+    }
+    #hedr {
+      font-family: Satisfy;
+      font-size: 50px;
+      text-align: center;
+      color: inherit;
+      padding: 1%;
+    }
+
+    #gallery {
+      -webkit-column-count: 4;
+      -moz-column-count: 4;
+      column-count: 4;
+      -webkit-column-gap: 20px;
+      -moz-column-gap: 20px;
+      column-gap: 20px;
+    }
+
+    @media (max-width: 1200px) {
+      #gallery {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+        -webkit-column-gap: 20px;
+        -moz-column-gap: 20px;
+        column-gap: 20px;
+      }
+    }
+
+    @media (max-width: 800px) {
+      #gallery {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+        -webkit-column-gap: 20px;
+        -moz-column-gap: 20px;
+        column-gap: 20px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      #gallery {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+      }
+    }
+
+    #gallery img,
+    #gallery video {
+      width: 100%;
+      height: auto;
+      margin: 4% auto;
+      cursor: pointer;
+      -webkit-transition: all 0.2s;
+      transition: all 0.2s;
+    }
+
+    .modal-img,
+    .modal-vid {
+      width: 100%;
+      height: auto;
+    }
+
+    .modal-body img{
+      width:100%;
+      text-align: center;
+    }
+      .modal-body {
+      padding: 0;
+      text-align: center;
+    }
+    .bg-cont {
+      width: 100%;
+      max-height: 45vh;
+      margin-bottom: 2%;
+    }
+
+     .bg-video video{
+      width: 100%;
+      object-fit: cover;
+      height: 42vh;
+      box-shadow: -15px 10px 35px #000;
+    }
+    #hedr {
+      transform: translateY(-220px);
+      color: inherit;
+    }
+    .contd-gallery {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+</style>
+
+<div class="bg-cont">
+    <div class="bg-video">
+      <video id="bg-video" autoplay muted loop>
+        <source src="https://www.sample-videos.com/video123/mp4/720/big_buck_bunny_720p_20mb.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <h1 id="hedr">Gallery of Year 2022</h1>
+</div>
+<div class="contd-gallery">
+    <div id="gallery" class="container-fluid">
+        <img src="https://source.unsplash.com/1600x1200?female,portrait" class="img-responsive" onclick="toggleModal(this)">
+        <img src="https://source.unsplash.com/1024x768?female,portrait" class="img-responsive" onclick="toggleModal(this)">
+        <img src="https://source.unsplash.com/1366x768?female,portrait" class="img-responsive" onclick="toggleModal(this)">
+        <video class="vid" controls onclick="toggleModal(this)">
+            <source
+            src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+        </video>
+        <!-- Add onclick attribute to toggleModal function -->
+        <!-- ... (other images and videos) ... -->
+        <img src="https://source.unsplash.com/1920x1080?female,portrait" class="img-responsive" onclick="toggleModal(this)">
+        <img src="https://source.unsplash.com/640x360?female,portrait" class="img-responsive" onclick="toggleModal(this)">
+        <img src="https://source.unsplash.com/320x640?female,portrait" class="img-responsive" onclick="toggleModal(this)">
+        <img src="https://source.unsplash.com/1200x1600?female,portrait" class="card img-responsive" onclick="toggleModal(this)">
+        <img src="https://source.unsplash.com/800x600?female,portrait" class="img-responsive" onclick="toggleModal(this)">
+        <img src="https://source.unsplash.com/600x800?female,portrait" class="img-responsive" onclick="toggleModal(this)">
+        <video class="vid" controls onclick="toggleModal(this)">
+            <source
+            src="https://www.sample-videos.com/video123/mp4/720/big_buck_bunny_720p_20mb.mp4" type="video/mp4">
+        </video>
+        <img src="https://source.unsplash.com/400x600?female,portrait" class="img-responsive" onclick="toggleModal(this)">
+        <img src="https://source.unsplash.com/600x400?female,portrait" class="img-responsive" onclick="toggleModal(this)">
+        <img src="https://source.unsplash.com/1100x1600?female,portrait" class="img-responsive" onclick="toggleModal(this)">
+        <img src="https://source.unsplash.com/1600x1100?female,portrait" class="img-responsive" onclick="toggleModal(this)">
+        <img src="https://source.unsplash.com/992x768?female,portrait" class="img-responsive" onclick="toggleModal(this)">
+        
+        </div>
+        
+        <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+        
+            <!-- Modal content-->
+            <div class="modal-content">
+            <div class="modal-body" id="modalContent">
+            </div>
+            </div>
+        
+        </div>
+        </div>
+</div>
+
+<script>
+  function toggleModal(element) {
+    var modal = $('#myModal');
+    var modalContent = $('#modalContent');
+    modalContent.empty(); // Clear previous content
+
+    // Clone the clicked element and append it to the modal body
+    var clone = $(element).clone();
+    clone.removeClass('img-responsive'); // Remove the responsive class
+    modalContent.append(clone);
+
+    // Toggle the modal
+    modal.modal('toggle');
+  }
+</script>
+
+{% endblock %}
