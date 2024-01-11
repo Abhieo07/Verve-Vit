@@ -1,0 +1,483 @@
+{% extends 'base.html' %}
+{% block title %} {{ eventName }} {% endblock %}
+{% load static %}
+
+{% block content %} 
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .static-section {
+        padding: 0;
+        background-color: #f8f9fa;
+        height: 100vh;
+        width: 100%;
+    }
+
+    .video-container {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        text-align: center;
+    }
+
+    .btn-register {
+        margin-top: 20px;
+    }
+
+    widget {
+filter: drop-shadow(1px 1px 3px rgb(170, 226, 231));
+&[type="ticket"] {
+  width: 100%;
+  position: relative;
+}
+
+.top,
+.bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.top,
+.bottom {
+  width: 100%;
+  height: 50vh;
+  border-top: dotted;
+  border-bottom: dotted;
+  border-left: 2px solid #111;
+  border-right: 2px solid #111;
+}
+.top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: inherit;
+  color: white;
+  .tourname {
+    font-size: 1.2em;
+  }
+  .bandname {
+    font-size: 1.8em;
+  }
+  .deetz {
+    padding-bottom: 2% !important;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    .event {
+      text-align: left;
+    }
+    .location {
+      text-align: left;
+      font-weight: bold;
+    }
+  }
+}
+
+.bottom {
+  padding: 2%;
+  height: 20vh;
+  padding-top: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: inherit;
+  color: white;
+  .price {
+    text-align: right;
+  }
+  .cost {
+    text-align: right;
+    font-style: italic;
+  }
+
+  .barcode {
+    position: relative;
+    min-width: 90%;
+    height: 8vh;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAF4AAAABCAYAAABXChlMAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAYdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuOWwzfk4AAACPSURBVChTXVAJDsMgDOsrVpELiqb+/4c0DgStQ7JMYogNh2gdvg5VfXFCRIZaC6BOtnoNFpvaumNmwb/71Frrm8XvgYkker1/g9WzMOsohaOGNziRs5inDsAn8yEPengTapJ5bmdZ2Yv7VvfPN6AH2NJx7nOWPTf1/78hoqgxhzw3ZqYG1Dr/9ur3y8vMxgNZhcAUnR4xKgAAAABJRU5ErkJggg==);
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+  }
+
+  .buy {
+    display: flex;
+    font-size: 80%;
+    font-weight: bold;
+    background-color: #06385e;
+    padding: 2% 4%;
+    border-radius: 15px;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 5px;
+  }
+}
+
+.-bold {
+  font-weight: bold;
+  color: #fff;
+}
+}
+#card-guest-detail {
+border: 1px solid #000;
+}
+.card-slider {
+    width: 100%;
+    padding: 5%;
+  }
+  .card{
+    border: none;
+  }
+   @media(max-width: 757px){
+    .card-slider {
+    max-height: 100vh;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .card {
+    border: 1px solid #000;
+    flex: 0 0 auto;
+    width:90%;
+    max-height: 90vh;
+    margin-right: 2%;
+    scroll-snap-align: start;
+  }
+   }
+
+    @media (min-width: 757px) {
+        /* Desktop layout */
+        .static-section {
+            width: 33.333%;
+            float: left;
+            position: fixed;
+            overflow-y: auto;
+        }
+
+        .scroll-section {
+            margin-left: 33.333%;
+        }
+    }
+
+    @media (max-width: 756px) {
+        /* Mobile layout */
+        .static-section {
+            width: 100%;
+        }
+    }
+</style>
+<style>
+#guest-contact {
+width: 300px;
+position: relative;
+padding: 0;
+margin: 0 !important;
+border-radius: 20px;
+overflow: hidden;
+cursor: pointer;
+border: none;
+background-color: inherit;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+
+}
+
+
+#guest-contact .card-image img {
+width: 300px;
+object-fit: cover;
+padding-top: 10%;
+padding-bottom: 10%;
+}
+
+#guest-contact .card-content {
+position: absolute;
+bottom: -180px;
+color: #fff;
+background: rgba(255, 255, 255, 0.2);
+backdrop-filter: blur(5px);
+min-height: 34%;
+width: 100%;
+transition: bottom .4s ease-in;
+box-shadow: 0 -10px 10px rgba(255, 255, 255, 0.1);
+border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#guest-contact:hover .card-content {
+bottom: 0px;
+}
+
+#guest-contact:hover .card-content h4,
+#guest-contact:hover .card-content h5 {
+transform: translateY(10px);
+opacity: 1;
+}
+
+#guest-contact .card-content h4,
+#guest-contact .card-content h5 {
+font-size: 1.1rem;
+text-transform: uppercase;
+letter-spacing: 3px;
+text-align: center;
+transition: 0.8s;
+font-weight: 500;
+opacity: 0;
+transform: translateY(-40px);
+transition-delay: 0.2s;
+}
+
+#guest-contact .card-content h5 {
+transition: 0.5s;
+font-weight: 200;
+font-size: 0.8rem;
+letter-spacing: 2px;
+}
+
+#guest-contact .card-content .social-icons {
+list-style: none;
+padding: 0;
+
+}
+
+
+#guest-contact .card-content .social-icons li {
+margin: 10px;
+transition: 0.5s;
+transition-delay: calc(0.15s * var(--i));
+transform: translateY(50px);
+}
+
+
+#guest-contact:hover .card-content .social-icons li {
+transform: translateY(20px);
+}
+
+#guest-contact .card-content .social-icons li a {
+color: #fff;
+}
+
+#guest-contact .card-content .social-icons li a span {
+font-size: 1.3rem;
+}
+.detail-vit{
+width: 100%;
+color: #fff;
+padding-top: 60px;
+padding-left: 10%;
+}
+@media (max-width: 490px) {
+
+#guest-contact .card-content {
+            bottom: 0px;
+        }
+        #guest-contact{
+            width: 90%;
+            
+        }
+
+        #guest-contact .card-content h4,
+        #guest-contact .card-content h5 {
+            transform: translateY(10px);
+            opacity: 1;
+        }
+        #guest-contact .card-image img {
+            max-height: 420px;
+            padding: 0;
+            width: 100%;
+            object-fit: cover;
+            }
+
+            #guest-contact .card-content .social-icons li {
+            transform: translateY(20px);
+        }
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Static Section (1/3 width) -->
+        <div class="col-md-4 static-section">
+            <!-- Video Background -->
+            <div class="video-container">
+                <video autoplay muted loop>
+                    <source src="{% static 'big_buck_bunny_720p_1mb.mp4' %}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <!-- Video Overlay with Caption and Text -->
+            <div class="overlay">
+              <widget type="ticket" class="--flex-column">
+                <div class="top --flex-column">
+                  <div class="bandname -bold">Ghost Mice</div>
+                  <div class="tourname">Home Tour</div>
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/199011/concert.png" alt="" />
+                  <div class="deetz --flex-row-j!sb">
+                    <div class="event --flex-column">
+                      <div class="date">3rd March 2017</div>
+                      <div class="location -bold">Bloomington, Indiana</div>
+                    </div>
+                    <div class="price --flex-column">
+                      <div class="label">Price</div>
+                      <div class="cost -bold">$30</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="bottom --flex-row-j!sb">
+                  <div class="barcode"></div>
+                  <a class="buy" href="#">BUY TICKET</a>
+                </div>
+              </widget>
+            </div>
+        </div>
+
+        <!-- Scrollable Section (2/3 width) -->
+        <div class="col-md-8 scroll-section">
+            <!-- Your scrollable content goes here -->
+            <div class="card-slider">
+
+              <div class="card">
+                  <div class="card-body">
+                    <h2>Scrollable Section</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget turpis et nulla volutpat cursus. Quisque
+                        varius euismod risus, id interdum ex vulputate vel. Nullam dapibus vestibulum ligula, et malesuada
+                        neque tempus in.
+                    </p>
+                  </div>
+              </div>
+          
+              
+              <div class="card">
+                  <div class="card-body">
+                  <h5 class="card-title">Card 2</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+              </div>
+          
+              
+              <div class="card">
+                  <div class="card-body">
+                  <h5 class="card-title">Card 3</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+              </div>
+          
+              
+          
+              <div class="card">
+                  <div class="card-body">
+                  <h5 class="card-title">Card 1</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+              </div>
+          
+              
+              <div class="card">
+                  <div class="card-body">
+                  <h5 class="card-title">Card 2</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+              </div>
+          
+              <div class="card" id="card-guest-detail">
+                <div class="row">
+                  <!-- Left column for the inner card (visible on larger screens) -->
+                  <div class="col-md-4 d-none d-md-block">
+                    <div id="guest-contact" class="card">
+                      <div class="card-image">
+                        <img src="https://images.pexels.com/photos/2746187/pexels-photo-2746187.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                      </div>
+                      <div class="card-content d-flex flex-column align-items-center">
+                        <h4 class="pt-2">SomeOne Famous</h4>
+                        <h5>Creative Designer</h5>
+              
+                        <ul class="social-icons d-flex justify-content-center">
+                          <li style="--i:1">
+                            <a href="#">
+                              <span class="fab fa-facebook"></span>
+                            </a>
+                          </li>
+                          <li style="--i:2">
+                            <a href="#">
+                              <span class="fab fa-twitter"></span>
+                            </a>
+                          </li>
+                          <li style="--i:3">
+                            <a href="#">
+                              <span class="fab fa-instagram"></span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <!-- Right column for the outer card content -->
+                  <div class="col-12 col-md-8">
+                    <!-- Outer card content (visible on all screens) -->
+                    <div class="card-body-guest">
+                      <div id="head">
+                        <h2>Our Guest</h2>
+                      </div>
+                      <!-- Additional content for the outer card goes here -->
+                    </div>
+                  </div>
+              
+                  <!-- Inner card outside the outer card (visible on smaller screens) -->
+                  <div class="col-12 d-md-none">
+                    <div id="guest-contact" class="card position-absolute" style="left: 100%; top: 0;">
+                      <div class="card-image">
+                        <img src="https://images.pexels.com/photos/2746187/pexels-photo-2746187.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                      </div>
+                      <div class="card-content d-flex flex-column align-items-center">
+                        <h4 class="pt-2">SomeOne Famous</h4>
+                        <h5>Creative Designer</h5>
+              
+                        <ul class="social-icons d-flex justify-content-center">
+                          <li style="--i:1">
+                            <a href="#">
+                              <span class="fab fa-facebook"></span>
+                            </a>
+                          </li>
+                          <li style="--i:2">
+                            <a href="#">
+                              <span class="fab fa-twitter"></span>
+                            </a>
+                          </li>
+                          <li style="--i:3">
+                            <a href="#">
+                              <span class="fab fa-instagram"></span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              
+          </div>
+            <!-- Add more content as needed -->
+        </div>
+    </div>
+</div>
+
+{% endblock %}

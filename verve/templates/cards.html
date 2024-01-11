@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-cgQouL0Oq7RVQZlZ6gu04ZPftrDjemEChCg8VPdAsGUXCwPDVZ6kHoBjLgOGCGmXXFVgUxiijSLXq2lU6w33TRg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    .container-cards {
+      background-color: #292323;
+      position: relative;
+      max-width: 100%;
+      padding-left: 2%;
+      padding-right: 2%;
+    }
+    widget {
+      filter: drop-shadow(1px 1px 3px rgb(170, 226, 231));
+      &[type="ticket"] {
+        width: 100%;
+        position: relative;
+      }
+
+      .top,
+      .bottom {
+        display: flex;
+        justify-content: space-between;
+        > div {
+          padding: 0 3%;
+        }
+        img {
+          width: 100%;
+          padding: 5% 0;
+        }
+      }
+
+      .top,
+      .bottom {
+        border-top: dotted;
+        border-bottom: dotted;
+      }
+
+      .top {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: #4CAF50; /* Green */
+        color: white;
+        .deetz {
+          padding-bottom: 2% !important;
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          .event {
+            text-align: left;
+          }
+          .location {
+            text-align: left;
+            font-weight: bold;
+          }
+        }
+      }
+
+      .bottom {
+        padding: 2%;
+        height: 15%;
+        padding-top: 5%;
+        display: flex;
+        justify-content: space-between;
+        background-color: #2196F3; /* Blue */
+        color: white;
+        .price {
+          text-align: right;
+        }
+        .cost {
+          text-align: right;
+          font-style: italic;
+        }
+
+        .barcode {
+        position: relative;
+        min-width: 38%;
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAF4AAAABCAYAAABXChlMAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAYdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuOWwzfk4AAACPSURBVChTXVAJDsMgDOsrVpELiqb+/4c0DgStQ7JMYogNh2gdvg5VfXFCRIZaC6BOtnoNFpvaumNmwb/71Frrm8XvgYkker1/g9WzMOsohaOGNziRs5inDsAn8yEPengTapJ5bmdZ2Yv7VvfPN6AH2NJx7nOWPTf1/78hoqgxhzw3ZqYG1Dr/9ur3y8vMxgNZhcAUnR4xKgAAAABJRU5ErkJggg==);
+        background-repeat: repeat-y;
+        background-size: 100% auto;
+      }
+
+      .buy {
+        display: flex;
+        font-size: 80%;
+        font-weight: bold;
+        background-color: #f44336;
+        padding: 2% 4%;
+        border-radius: 15px;
+        color: white;
+        text-decoration: none;
+      }
+      }
+      .-bold {
+            font-weight: bold;
+            color: #fff; 
+        }
+
+    }
+    
+    .swiper-container {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      display: flex;
+      flex-direction: column;
+      padding: 1%;
+      margin: 0;
+    }
+
+    .swiper-slide .item {
+      flex-grow: 1;
+      padding-left: 1%;
+      padding-right: 1%;
+    }
+
+    .swiper-slide .item img {
+      width:100%;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev,
+    h2 {
+      color: #fff;
+    }
+
+
+    /* Define different colors for each ticket */
+    .swiper-slide:nth-child(odd) .top {
+      background-color: #673ab7; /* Purple */
+    }
+
+    .swiper-slide:nth-child(even) .top {
+      background-color: #ff9800; /* Orange */
+    }
+
+    .swiper-slide:nth-child(3n) .top {
+      background-color: #e91e63; /* Pink */
+    }
+    @media (max-width: 768px) {
+      .swiper-button-next,
+      .swiper-button-prev {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container-cards">
+    <h2 class="float-start">Upcoming Gigs</h2>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <!-- Add your train ticket items here -->
+        <div class="swiper-slide">
+          <div class="item">
+            <widget type="ticket" class="--flex-column">
+              <div class="top --flex-column">
+                <div class="bandname -bold">Ghost Mice</div>
+                <div class="tourname">Home Tour</div>
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/199011/concert.png" alt="" />
+                <div class="deetz --flex-row-j!sb">
+                  <div class="event --flex-column">
+                    <div class="date">3rd March 2017</div>
+                    <div class="location -bold">Bloomington, Indiana</div>
+                  </div>
+                  <div class="price --flex-column">
+                    <div class="label">Price</div>
+                    <div class="cost -bold">$30</div>
+                  </div>
+                </div>
+              </div>
+              <div class="bottom --flex-row-j!sb">
+                <div class="barcode"></div>
+                <a class="buy" href="#">BUY TICKET</a>
+              </div>
+            </widget>
+          </div>
+        </div>
+        <!-- Repeat the structure for other train ticket items -->
+        <div class="swiper-slide">
+          <div class="item">
+            <widget type="ticket" class="--flex-column">
+              <div class="top --flex-column">
+                <div class="bandname -bold">Ghost Mice</div>
+                <div class="tourname">Home Tour</div>
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/199011/concert.png" alt="" />
+                <div class="deetz --flex-row-j!sb">
+                  <div class="event --flex-column">
+                    <div class="date">3rd March 2017</div>
+                    <div class="location -bold">Bloomington, Indiana</div>
+                  </div>
+                  <div class="price --flex-column">
+                    <div class="label">Price</div>
+                    <div class="cost -bold">$30</div>
+                  </div>
+                </div>
+              </div>
+              <div class="bottom --flex-row-j!sb">
+                <div class="barcode"></div>
+                <a class="buy" href="#">BUY TICKET</a>
+              </div>
+            </widget>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="item">
+            <widget type="ticket" class="--flex-column">
+              <div class="top --flex-column">
+                <div class="bandname -bold">Ghost Mice</div>
+                <div class="tourname">Home Tour</div>
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/199011/concert.png" alt="" />
+                <div class="deetz --flex-row-j!sb">
+                  <div class="event --flex-column">
+                    <div class="date">3rd March 2017</div>
+                    <div class="location -bold">Bloomington, Indiana</div>
+                  </div>
+                  <div class="price --flex-column">
+                    <div class="label">Price</div>
+                    <div class="cost -bold">$30</div>
+                  </div>
+                </div>
+              </div>
+              <div class="bottom --flex-row-j!sb">
+                <div class="barcode"></div>
+                <a class="buy" href="#">BUY TICKET</a>
+              </div>
+            </widget>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="item">
+            <widget type="ticket" class="--flex-column">
+              <div class="top --flex-column">
+                <div class="bandname -bold">Ghost Mice</div>
+                <div class="tourname">Home Tour</div>
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/199011/concert.png" alt="" />
+                <div class="deetz --flex-row-j!sb">
+                  <div class="event --flex-column">
+                    <div class="date">3rd March 2017</div>
+                    <div class="location -bold">Bloomington, Indiana</div>
+                  </div>
+                  <div class="price --flex-column">
+                    <div class="label">Price</div>
+                    <div class="cost -bold">$30</div>
+                  </div>
+                </div>
+              </div>
+              <div class="bottom --flex-row-j!sb">
+                <div class="barcode"></div>
+                <a class="buy" href="#">BUY TICKET</a>
+              </div>
+            </widget>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="item">
+            <widget type="ticket" class="--flex-column">
+              <div class="top --flex-column">
+                <div class="bandname -bold">Ghost Mice</div>
+                <div class="tourname">Home Tour</div>
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/199011/concert.png" alt="" />
+                <div class="deetz --flex-row-j!sb">
+                  <div class="event --flex-column">
+                    <div class="date">3rd March 2017</div>
+                    <div class="location -bold">Bloomington, Indiana</div>
+                  </div>
+                  <div class="price --flex-column">
+                    <div class="label">Price</div>
+                    <div class="cost -bold">$30</div>
+                  </div>
+                </div>
+              </div>
+              <div class="bottom --flex-row-j!sb">
+                <div class="barcode"></div>
+                <a class="buy" href="#">BUY TICKET</a>
+              </div>
+            </widget>
+          </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="item">
+              <widget type="ticket" class="--flex-column">
+                <div class="top --flex-column">
+                  <div class="bandname -bold">Ghost Mice</div>
+                  <div class="tourname">Home Tour</div>
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/199011/concert.png" alt="" />
+                  <div class="deetz --flex-row-j!sb">
+                    <div class="event --flex-column">
+                      <div class="date">3rd March 2017</div>
+                      <div class="location -bold">Bloomington, Indiana</div>
+                    </div>
+                    <div class="price --flex-column">
+                      <div class="label">Price</div>
+                      <div class="cost -bold">$30</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="bottom --flex-row-j!sb">
+                  <div class="barcode"></div>
+                  <a class="buy" href="#">BUY TICKET</a>
+                </div>
+              </widget>
+            </div>
+          </div>
+          <!-- Repeat the structure for other train ticket items -->
+          <div class="swiper-slide">
+            <div class="item">
+              <widget type="ticket" class="--flex-column">
+                <div class="top --flex-column">
+                  <div class="bandname -bold">Ghost Mice</div>
+                  <div class="tourname">Home Tour</div>
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/199011/concert.png" alt="" />
+                  <div class="deetz --flex-row-j!sb">
+                    <div class="event --flex-column">
+                      <div class="date">3rd March 2017</div>
+                      <div class="location -bold">Bloomington, Indiana</div>
+                    </div>
+                    <div class="price --flex-column">
+                      <div class="label">Price</div>
+                      <div class="cost -bold">$30</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="bottom --flex-row-j!sb">
+                  <div class="barcode"></div>
+                  <a class="buy" href="#">BUY TICKET</a>
+                </div>
+              </widget>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="item">
+              <widget type="ticket" class="--flex-column">
+                <div class="top --flex-column">
+                  <div class="bandname -bold">Ghost Mice</div>
+                  <div class="tourname">Home Tour</div>
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/199011/concert.png" alt="" />
+                  <div class="deetz --flex-row-j!sb">
+                    <div class="event --flex-column">
+                      <div class="date">3rd March 2017</div>
+                      <div class="location -bold">Bloomington, Indiana</div>
+                    </div>
+                    <div class="price --flex-column">
+                      <div class="label">Price</div>
+                      <div class="cost -bold">$30</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="bottom --flex-row-j!sb">
+                  <div class="barcode"></div>
+                  <a class="buy" href="#">BUY TICKET</a>
+                </div>
+              </widget>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="item">
+              <widget type="ticket" class="--flex-column">
+                <div class="top --flex-column">
+                  <div class="bandname -bold">Ghost Mice</div>
+                  <div class="tourname">Home Tour</div>
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/199011/concert.png" alt="" />
+                  <div class="deetz --flex-row-j!sb">
+                    <div class="event --flex-column">
+                      <div class="date">3rd March 2017</div>
+                      <div class="location -bold">Bloomington, Indiana</div>
+                    </div>
+                    <div class="price --flex-column">
+                      <div class="label">Price</div>
+                      <div class="cost -bold">$30</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="bottom --flex-row-j!sb">
+                  <div class="barcode"></div>
+                  <a class="buy" href="#">BUY TICKET</a>
+                </div>
+              </widget>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="item">
+              <widget type="ticket" class="--flex-column">
+                <div class="top --flex-column">
+                  <div class="bandname -bold">Ghost Mice</div>
+                  <div class="tourname">Home Tour</div>
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/199011/concert.png" alt="" />
+                  <div class="deetz --flex-row-j!sb">
+                    <div class="event --flex-column">
+                      <div class="date">3rd March 2017</div>
+                      <div class="location -bold">Bloomington, Indiana</div>
+                    </div>
+                    <div class="price --flex-column">
+                      <div class="label">Price</div>
+                      <div class="cost -bold">$30</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="bottom --flex-row-j!sb">
+                  <div class="barcode"></div>
+                  <a class="buy" href="#">BUY TICKET</a>
+                </div>
+              </widget>
+            </div>
+          </div>
+
+        <!-- Repeat the structure for additional train ticket items -->
+      </div>
+    </div>
+    <!-- Add Navigation -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        991: {
+          slidesPerView: 5, // Display 3 cards in a row for smaller screens
+          spaceBetween: 10,
+        },
+        550: {
+          slidesPerView: 3, // Display 3 cards in a row for smaller screens
+          spaceBetween: 4,
+        },
+        275: {
+          slidesPerView: 2, // Display 2 cards in a row for even smaller screens
+          spaceBetween: 0, // No space between slides
+        },
+      },
+    });
+  </script>
+
+</body>
+
+</html>
+
+
