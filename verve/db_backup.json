@@ -1,0 +1,1250 @@
+[
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2025-01-17T13:53:08.270Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "1",
+        "object_repr": "Tech Summit 2025",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Guest\"]}}]"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": 1,
+        "codename": "add_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": 1,
+        "codename": "change_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": 1,
+        "codename": "delete_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+        "name": "Can view log entry",
+        "content_type": 1,
+        "codename": "view_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+        "name": "Can add permission",
+        "content_type": 2,
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+        "name": "Can change permission",
+        "content_type": 2,
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": 2,
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+        "name": "Can view permission",
+        "content_type": 2,
+        "codename": "view_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+        "name": "Can add group",
+        "content_type": 3,
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+        "name": "Can change group",
+        "content_type": 3,
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+        "name": "Can delete group",
+        "content_type": 3,
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+        "name": "Can view group",
+        "content_type": 3,
+        "codename": "view_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+        "name": "Can add user",
+        "content_type": 4,
+        "codename": "add_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+        "name": "Can change user",
+        "content_type": 4,
+        "codename": "change_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+        "name": "Can delete user",
+        "content_type": 4,
+        "codename": "delete_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+        "name": "Can view user",
+        "content_type": 4,
+        "codename": "view_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+        "name": "Can add content type",
+        "content_type": 5,
+        "codename": "add_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+        "name": "Can change content type",
+        "content_type": 5,
+        "codename": "change_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": 5,
+        "codename": "delete_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+        "name": "Can view content type",
+        "content_type": 5,
+        "codename": "view_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+        "name": "Can add session",
+        "content_type": 6,
+        "codename": "add_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+        "name": "Can change session",
+        "content_type": 6,
+        "codename": "change_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+        "name": "Can delete session",
+        "content_type": 6,
+        "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+        "name": "Can view session",
+        "content_type": 6,
+        "codename": "view_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+        "name": "Can add contact",
+        "content_type": 7,
+        "codename": "add_contact"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+        "name": "Can change contact",
+        "content_type": 7,
+        "codename": "change_contact"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+        "name": "Can delete contact",
+        "content_type": 7,
+        "codename": "delete_contact"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+        "name": "Can view contact",
+        "content_type": 7,
+        "codename": "view_contact"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+        "name": "Can add gallery",
+        "content_type": 8,
+        "codename": "add_gallery"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+        "name": "Can change gallery",
+        "content_type": 8,
+        "codename": "change_gallery"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+        "name": "Can delete gallery",
+        "content_type": 8,
+        "codename": "delete_gallery"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+        "name": "Can view gallery",
+        "content_type": 8,
+        "codename": "view_gallery"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+        "name": "Can add testimonial",
+        "content_type": 9,
+        "codename": "add_testimonial"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+        "name": "Can change testimonial",
+        "content_type": 9,
+        "codename": "change_testimonial"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+        "name": "Can delete testimonial",
+        "content_type": 9,
+        "codename": "delete_testimonial"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+        "name": "Can view testimonial",
+        "content_type": 9,
+        "codename": "view_testimonial"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+        "name": "Can add event",
+        "content_type": 10,
+        "codename": "add_event"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+        "name": "Can change event",
+        "content_type": 10,
+        "codename": "change_event"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+        "name": "Can delete event",
+        "content_type": 10,
+        "codename": "delete_event"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+        "name": "Can view event",
+        "content_type": 10,
+        "codename": "view_event"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+        "name": "Can add guest",
+        "content_type": 11,
+        "codename": "add_guest"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+        "name": "Can change guest",
+        "content_type": 11,
+        "codename": "change_guest"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+        "name": "Can delete guest",
+        "content_type": 11,
+        "codename": "delete_guest"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+        "name": "Can view guest",
+        "content_type": 11,
+        "codename": "view_guest"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+        "name": "Can add highlight",
+        "content_type": 12,
+        "codename": "add_highlight"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+        "name": "Can change highlight",
+        "content_type": 12,
+        "codename": "change_highlight"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+        "name": "Can delete highlight",
+        "content_type": 12,
+        "codename": "delete_highlight"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+        "name": "Can view highlight",
+        "content_type": 12,
+        "codename": "view_highlight"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 49,
+    "fields": {
+        "name": "Can add registration",
+        "content_type": 13,
+        "codename": "add_registration"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 50,
+    "fields": {
+        "name": "Can change registration",
+        "content_type": 13,
+        "codename": "change_registration"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 51,
+    "fields": {
+        "name": "Can delete registration",
+        "content_type": 13,
+        "codename": "delete_registration"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 52,
+    "fields": {
+        "name": "Can view registration",
+        "content_type": 13,
+        "codename": "view_registration"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 53,
+    "fields": {
+        "name": "Can add activities",
+        "content_type": 14,
+        "codename": "add_activities"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 54,
+    "fields": {
+        "name": "Can change activities",
+        "content_type": 14,
+        "codename": "change_activities"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 55,
+    "fields": {
+        "name": "Can delete activities",
+        "content_type": 14,
+        "codename": "delete_activities"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 56,
+    "fields": {
+        "name": "Can view activities",
+        "content_type": 14,
+        "codename": "view_activities"
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$mrDsgYg2Y7f7D75PZpqqPg$iFzBxxyyVWRKB64Nd0ILnj14rdSG2OwqxAImx9jBvss=",
+        "last_login": "2025-01-15T20:11:33.214Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-01-15T20:11:16.739Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+        "app_label": "admin",
+        "model": "logentry"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+        "app_label": "auth",
+        "model": "permission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+        "app_label": "auth",
+        "model": "group"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+        "app_label": "auth",
+        "model": "user"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+        "app_label": "contenttypes",
+        "model": "contenttype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+        "app_label": "sessions",
+        "model": "session"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+        "app_label": "core",
+        "model": "contact"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+        "app_label": "core",
+        "model": "gallery"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+        "app_label": "core",
+        "model": "testimonial"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+        "app_label": "core",
+        "model": "event"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+        "app_label": "core",
+        "model": "guest"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+        "app_label": "core",
+        "model": "highlight"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 13,
+    "fields": {
+        "app_label": "core",
+        "model": "registration"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 14,
+    "fields": {
+        "app_label": "core",
+        "model": "activities"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "omllx92vjz8spff9dlupucjwflbch2fq",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSFMKQ9duu83kIFhpGpoUtqV8d-VpAtd3ntOzksE3LcS9pbXMJO4CBCn3y9ieuTaAd2x3haZlrqtc5RdkQdtclooP6-H-xco2ErPqkRMBN5hYkL23oAaMpHyJmrNFrR33-EseJ3ROcjqPPIwWmDDwOL9AfbyN9g:1tY9jh:_qP2_0P3lqy1IadsVJ3kLaVWbY3Yl8GSpHpaWcNemv0",
+        "expire_date": "2025-01-29T20:11:33.218Z"
+    }
+},
+{
+    "model": "core.contact",
+    "pk": 1,
+    "fields": {
+        "name": "Alice Johnson",
+        "email": "alice.johnson@example.com",
+        "phone": "1234567890",
+        "role": "Event Manager",
+        "profile_img": "default.png"
+    }
+},
+{
+    "model": "core.contact",
+    "pk": 2,
+    "fields": {
+        "name": "Bob Smith",
+        "email": "bob.smith@example.com",
+        "phone": "9876543210",
+        "role": "Coordinator",
+        "profile_img": "default.png"
+    }
+},
+{
+    "model": "core.contact",
+    "pk": 3,
+    "fields": {
+        "name": "Charlie Brown",
+        "email": "charlie.brown@example.com",
+        "phone": "5678901234",
+        "role": "Marketing Lead",
+        "profile_img": "default.png"
+    }
+},
+{
+    "model": "core.contact",
+    "pk": 4,
+    "fields": {
+        "name": "Diana Prince",
+        "email": "diana.prince@example.com",
+        "phone": "4321098765",
+        "role": "Speaker",
+        "profile_img": "default.png"
+    }
+},
+{
+    "model": "core.contact",
+    "pk": 5,
+    "fields": {
+        "name": "Ethan Hunt",
+        "email": "ethan.hunt@example.com",
+        "phone": "2233445566",
+        "role": "Technical Lead",
+        "profile_img": "default.png"
+    }
+},
+{
+    "model": "core.contact",
+    "pk": 6,
+    "fields": {
+        "name": "Fiona Davis",
+        "email": "fiona.davis@example.com",
+        "phone": "6677889900",
+        "role": "Logistics Coordinator",
+        "profile_img": "default.png"
+    }
+},
+{
+    "model": "core.guest",
+    "pk": 1,
+    "fields": {
+        "guest_name": "Dr. Alan Turing",
+        "affiliation": "Tech Pioneer",
+        "profile_img": "default.png"
+    }
+},
+{
+    "model": "core.guest",
+    "pk": 2,
+    "fields": {
+        "guest_name": "Ada Lovelace",
+        "affiliation": "AI Visionary",
+        "profile_img": "default.png"
+    }
+},
+{
+    "model": "core.guest",
+    "pk": 3,
+    "fields": {
+        "guest_name": "Kevin Mitnick",
+        "affiliation": "Security Consultant",
+        "profile_img": "default.png"
+    }
+},
+{
+    "model": "core.guest",
+    "pk": 4,
+    "fields": {
+        "guest_name": "Dr. Jane Goodall",
+        "affiliation": "Healthcare Advocate",
+        "profile_img": "default.png"
+    }
+},
+{
+    "model": "core.guest",
+    "pk": 5,
+    "fields": {
+        "guest_name": "Vitalik Buterin",
+        "affiliation": "Blockchain Innovator",
+        "profile_img": "default.png"
+    }
+},
+{
+    "model": "core.guest",
+    "pk": 6,
+    "fields": {
+        "guest_name": "Tim Berners-Lee",
+        "affiliation": "Inventor of the Web",
+        "profile_img": "default.png"
+    }
+},
+{
+    "model": "core.guest",
+    "pk": 7,
+    "fields": {
+        "guest_name": "Elon Musk",
+        "affiliation": "CEO, Tesla and SpaceX",
+        "profile_img": "default.png"
+    }
+},
+{
+    "model": "core.guest",
+    "pk": 8,
+    "fields": {
+        "guest_name": "Sal Khan",
+        "affiliation": "Founder, Khan Academy",
+        "profile_img": "default.png"
+    }
+},
+{
+    "model": "core.event",
+    "pk": 1,
+    "fields": {
+        "title": "Tech Summit 2025",
+        "summary": "A conference on emerging technologies.",
+        "date": "2025-02-15",
+        "location": "New York City",
+        "price": 100,
+        "description": "A conference on emerging technologies.",
+        "participant_count": 0,
+        "img": "default.png",
+        "vid": "default.mp4",
+        "incharge": 1,
+        "guest": [
+            1,
+            2,
+            3,
+            4
+        ]
+    }
+},
+{
+    "model": "core.event",
+    "pk": 2,
+    "fields": {
+        "title": "AI Innovations",
+        "summary": "Exploring AI in various industries.",
+        "date": "2025-03-20",
+        "location": "San Francisco",
+        "price": 150,
+        "description": "Exploring AI in various industries.",
+        "participant_count": 0,
+        "img": "default.png",
+        "vid": "default.mp4",
+        "incharge": 2,
+        "guest": [5,6,7]
+    }
+},
+{
+    "model": "core.event",
+    "pk": 3,
+    "fields": {
+        "title": "Cybersecurity Workshop",
+        "summary": "Hands-on training in cybersecurity.",
+        "date": "2025-04-10",
+        "location": "London",
+        "price": 75,
+        "description": "Hands-on training in cybersecurity.",
+        "participant_count": 0,
+        "img": "default.png",
+        "vid": "default.mp4",
+        "incharge": 3,
+        "guest": [8,7,6,5]
+    }
+},
+{
+    "model": "core.event",
+    "pk": 4,
+    "fields": {
+        "title": "Healthcare Tech",
+        "summary": "Advancements in healthcare technology.",
+        "date": "2025-05-05",
+        "location": "Berlin",
+        "price": 120,
+        "description": "Advancements in healthcare technology.",
+        "participant_count": 0,
+        "img": "default.png",
+        "vid": "default.mp4",
+        "incharge": 4,
+        "guest": [4,3]
+    }
+},
+{
+    "model": "core.event",
+    "pk": 5,
+    "fields": {
+        "title": "Blockchain Summit",
+        "summary": "Exploring blockchain and its applications.",
+        "date": "2025-06-15",
+        "location": "Dubai",
+        "price": 200,
+        "description": "Exploring blockchain and its applications.",
+        "participant_count": 0,
+        "img": "default.png",
+        "vid": "default.mp4",
+        "incharge": 5,
+        "guest": [5,8,2]
+    }
+},
+{
+    "model": "core.event",
+    "pk": 6,
+    "fields": {
+        "title": "Tech Expo 2024",
+        "summary": "Showcasing the latest in tech.",
+        "date": "2024-10-20",
+        "location": "Tokyo",
+        "price": 50,
+        "description": "Showcasing the latest in tech.",
+        "participant_count": 1297,
+        "img": "default.png",
+        "vid": "default.mp4",
+        "incharge": 6,
+        "guest": [1,2,6,7,8]
+    }
+},
+{
+    "model": "core.event",
+    "pk": 7,
+    "fields": {
+        "title": "Robotics Fair",
+        "summary": "Exploring the world of robotics.",
+        "date": "2024-11-25",
+        "location": "Singapore",
+        "price": 80,
+        "description": "Exploring the world of robotics.",
+        "participant_count": 506,
+        "img": "default.png",
+        "vid": "default.mp4",
+        "incharge": 1,
+        "guest": [5]
+    }
+},
+{
+    "model": "core.event",
+    "pk": 8,
+    "fields": {
+        "title": "EdTech Conference",
+        "summary": "Innovations in education technology.",
+        "date": "2024-12-15",
+        "location": "Sydney",
+        "price": 90,
+        "description": "Innovations in education technology.",
+        "participant_count": 212,
+        "img": "default.png",
+        "vid": "default.mp4",
+        "incharge": 2,
+        "guest": [2,4,6]
+    }
+},
+{
+    "model": "core.activities",
+    "pk": 1,
+    "fields": {
+        "event": 1,
+        "title": "Keynote Speech",
+        "description": "Opening remarks by industry leaders.",
+        "image": "",
+        "video": ""
+    }
+},
+{
+    "model": "core.activities",
+    "pk": 2,
+    "fields": {
+        "event": 1,
+        "title": "Tech Expo",
+        "description": "Showcasing the latest innovations in tech.",
+        "image": "",
+        "video": ""
+    }
+},
+{
+    "model": "core.activities",
+    "pk": 3,
+    "fields": {
+        "event": 1,
+        "title": "Networking Session",
+        "description": "Connect with professionals in the industry.",
+        "image": "",
+        "video": ""
+    }
+},
+{
+    "model": "core.activities",
+    "pk": 4,
+    "fields": {
+        "event": 2,
+        "title": "AI Panel Discussion",
+        "description": "Experts discuss the future of AI.",
+        "image": "",
+        "video": ""
+    }
+},
+{
+    "model": "core.activities",
+    "pk": 5,
+    "fields": {
+        "event": 2,
+        "title": "Hands-on Workshop",
+        "description": "Build your first AI model in this interactive session.",
+        "image": "",
+        "video": ""
+    }
+},
+{
+    "model": "core.activities",
+    "pk": 6,
+    "fields": {
+        "event": 2,
+        "title": "Startup Showcase",
+        "description": "Innovative AI startups present their solutions.",
+        "image": "",
+        "video": ""
+    }
+},
+{
+    "model": "core.activities",
+    "pk": 7,
+    "fields": {
+        "event": 3,
+        "title": "Phishing Awareness",
+        "description": "Learn how to detect phishing scams.",
+        "image": "",
+        "video": ""
+    }
+},
+{
+    "model": "core.activities",
+    "pk": 8,
+    "fields": {
+        "event": 3,
+        "title": "Penetration Testing",
+        "description": "Practical training on ethical hacking.",
+        "image": "",
+        "video": ""
+    }
+},
+{
+    "model": "core.activities",
+    "pk": 9,
+    "fields": {
+        "event": 3,
+        "title": "Cyber Law Overview",
+        "description": "Understanding legal aspects of cybersecurity.",
+        "image": "",
+        "video": ""
+    }
+},
+{
+    "model": "core.activities",
+    "pk": 10,
+    "fields": {
+        "event": 4,
+        "title": "Telemedicine Talk",
+        "description": "Exploring advancements in telemedicine.",
+        "image": "",
+        "video": ""
+    }
+},
+{
+    "model": "core.activities",
+    "pk": 11,
+    "fields": {
+        "event": 4,
+        "title": "AI in Diagnostics",
+        "description": "How AI is revolutionizing diagnostics.",
+        "image": "",
+        "video": ""
+    }
+},
+{
+    "model": "core.activities",
+    "pk": 12,
+    "fields": {
+        "event": 4,
+        "title": "Wearable Tech Demo",
+        "description": "Showcase of the latest wearable health devices.",
+        "image": "",
+        "video": ""
+    }
+},
+{
+    "model": "core.activities",
+    "pk": 13,
+    "fields": {
+        "event": 5,
+        "title": "Blockchain Basics",
+        "description": "Introduction to blockchain technology.",
+        "image": "",
+        "video": ""
+    }
+},
+{
+    "model": "core.activities",
+    "pk": 14,
+    "fields": {
+        "event": 5,
+        "title": "Cryptocurrency Trends",
+        "description": "Latest trends in cryptocurrency.",
+        "image": "",
+        "video": ""
+    }
+},
+{
+    "model": "core.activities",
+    "pk": 15,
+    "fields": {
+        "event": 5,
+        "title": "Smart Contracts",
+        "description": "Building and deploying smart contracts.",
+        "image": "",
+        "video": ""
+    }
+},
+{
+    "model": "core.activities",
+    "pk": 16,
+    "fields": {
+        "event": 6,
+        "title": "Product Launch",
+        "description": "Exclusive product launches from tech companies.",
+        "image": "",
+        "video": ""
+    }
+},
+{
+    "model": "core.activities",
+    "pk": 17,
+    "fields": {
+        "event": 6,
+        "title": "Interactive Demos",
+        "description": "Hands-on experience with cutting-edge gadgets.",
+        "image": "",
+        "video": ""
+    }
+},
+{
+    "model": "core.activities",
+    "pk": 18,
+    "fields": {
+        "event": 6,
+        "title": "Panel Discussion",
+        "description": "Experts discuss future tech trends.",
+        "image": "",
+        "video": ""
+    }
+},
+{
+    "model": "core.activities",
+    "pk": 19,
+    "fields": {
+        "event": 7,
+        "title": "Robot Battle",
+        "description": "Exciting robot battle competition.",
+        "image": "",
+        "video": ""
+    }
+},
+{
+    "model": "core.activities",
+    "pk": 20,
+    "fields": {
+        "event": 7,
+        "title": "Robotics Workshop",
+        "description": "Learn to build and program robots.",
+        "image": "",
+        "video": ""
+    }
+},
+{
+    "model": "core.activities",
+    "pk": 21,
+    "fields": {
+        "event": 7,
+        "title": "Future of Robotics",
+        "description": "Panel discussion on the future of robotics.",
+        "image": "",
+        "video": ""
+    }
+},
+{
+    "model": "core.activities",
+    "pk": 22,
+    "fields": {
+        "event": 8,
+        "title": "EdTech Startup Pitch",
+        "description": "Innovative startups pitch their ideas.",
+        "image": "",
+        "video": ""
+    }
+},
+{
+    "model": "core.activities",
+    "pk": 23,
+    "fields": {
+        "event": 8,
+        "title": "Interactive Classroom",
+        "description": "Experience next-gen classroom technologies.",
+        "image": "",
+        "video": ""
+    }
+},
+{
+    "model": "core.activities",
+    "pk": 24,
+    "fields": {
+        "event": 8,
+        "title": "Teacher Training",
+        "description": "Workshops to train educators in tech tools.",
+        "image": "",
+        "video": ""
+    }
+},
+{
+    "model": "core.testimonial",
+    "pk": 1,
+    "fields": {
+        "author_name": "Emma Wilson",
+        "author_role": "CEO, TechCorp",
+        "content": "This event was a game-changer for my company!",
+        "profile_img": "default.png"
+    }
+},
+{
+    "model": "core.testimonial",
+    "pk": 2,
+    "fields": {
+        "author_name": "Liam Davis",
+        "author_role": "CTO, InnovateX",
+        "content": "Incredible insights from industry leaders.",
+        "profile_img": "default.png"
+    }
+},
+{
+    "model": "core.testimonial",
+    "pk": 3,
+    "fields": {
+        "author_name": "Sophia Martinez",
+        "author_role": "Product Manager, HealthTech",
+        "content": "Amazing networking opportunities.",
+        "profile_img": "default.png"
+    }
+},
+{
+    "model": "core.testimonial",
+    "pk": 4,
+    "fields": {
+        "author_name": "Noah Brown",
+        "author_role": "Engineer, BuildAI",
+        "content": "Learned a lot about AI applications.",
+        "profile_img": "default.png"
+    }
+},
+{
+    "model": "core.testimonial",
+    "pk": 5,
+    "fields": {
+        "author_name": "Olivia Taylor",
+        "author_role": "Data Scientist, AnalyticsPro",
+        "content": "Highly recommended for tech enthusiasts.",
+        "profile_img": "default.png"
+    }
+}
+]

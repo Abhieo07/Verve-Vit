@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %} Gallery of Year 2022 {% endblock %}
+{% block title %} Gallery of Year {{ year }} {% endblock %}
 {% block content%}
 
 
@@ -103,15 +103,15 @@
 <div class="bg-cont">
     <div class="bg-video">
       <video id="bg-video" autoplay muted loop>
-        <source src="https://www.sample-videos.com/video123/mp4/720/big_buck_bunny_720p_20mb.mp4" type="video/mp4">
+        <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
-    <h1 id="hedr">Gallery of Year 2022</h1>
+    <h1 id="hedr">Gallery of Year {{ year }}</h1>
 </div>
 <div class="contd-gallery">
     <div id="gallery" class="container-fluid">
-        <img src="https://source.unsplash.com/1600x1200?female,portrait" class="img-responsive" onclick="toggleModal(this)">
+        <img src="https://picsum.photos/200/300" class="img-responsive" onclick="toggleModal(this)">
         <img src="https://source.unsplash.com/1024x768?female,portrait" class="img-responsive" onclick="toggleModal(this)">
         <img src="https://source.unsplash.com/1366x768?female,portrait" class="img-responsive" onclick="toggleModal(this)">
         <video class="vid" controls onclick="toggleModal(this)">

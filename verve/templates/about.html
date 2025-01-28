@@ -106,36 +106,18 @@
     <h1 id="h-testimonials">Testimonials</h1>
     <div class="demo">
       <div id="testimonial-slider" class="owl-carousel">
-        <div class="testimonial">
-          <div class="pic">
-            <img src="https://source.unsplash.com/300x400?female,portrait">
+        {% for testimonial in testimonials %}
+          <div class="testimonial">
+            <div class="pic">
+              <img src="{{ testimonial.profile_img.url }}" alt="{{ testimonial.author_name }}">
+            </div>
+            <h3 class="title">{{ testimonial.author_name }}</h3>
+            <span class="post">{{ testimonial.author_role }}</span>
+            <p class="description">
+              {{ testimonial.content }}
+            </p>
           </div>
-          <h3 class="title">Williamson</h3>
-          <span class="post">Web Developer</span>
-          <p class="description">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium ad asperiores at atque culpa dolores eaque fugiat hic illo ipsam ipsum minima modi necessitatibus nemo officia, omnis perferendis placeat sit vitae, consectetur adipisicing elit ipsam.
-          </p>
-        </div>
-        <div class="testimonial">
-          <div class="pic">
-            <img src="https://source.unsplash.com/1366x768?female,portrait">
-          </div>
-        <h3 class="title">Kristina</h3>
-        <span class="post">Web Designer</span>
-        <p class="description">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium ad asperiores at atque culpa dolores eaque fugiat hic illo ipsam ipsum minima modi necessitatibus nemo officia, omnis perferendis placeat sit vitae, consectetur adipisicing elit ipsam.
-        </p>
-        </div>
-        <div class="testimonial">
-          <div class="pic">
-            <img src="https://source.unsplash.com/1366x768?female,portrait">
-          </div>
-          <h3 class="title">Williamson</h3>
-          <span class="post">Web Developer</span>
-          <p class="description">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium ad asperiores at atque culpa dolores eaque fugiat hic illo ipsam ipsum minima modi necessitatibus nemo officia, omnis perferendis placeat sit vitae, consectetur adipisicing elit ipsam.
-          </p>
-        </div>
+        {% endfor %}
         <div class="testimonial">
           <div class="pic">
             <img src="https://source.unsplash.com/1366x768?female,portrait">

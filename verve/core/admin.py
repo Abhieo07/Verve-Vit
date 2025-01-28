@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Contact, Event, Highlight, Testimonial, Gallery, Registration, Guest
+from .models import Contact, Event, Activities, Testimonial, Gallery, Registration, Guest
 
 # Register your models here
 
@@ -11,8 +11,8 @@ class ContactAdmin(admin.ModelAdmin):
 class EventAdmin(admin.ModelAdmin):
     list_display = ['id', 'title', 'date', 'location', 'price', 'description', 'incharge']
 
-@admin.register(Highlight)
-class HighlightAdmin(admin.ModelAdmin):
+@admin.register(Activities)
+class ActivitiesAdmin(admin.ModelAdmin):
     list_display = ['id', 'event', 'title', 'description']
 
 @admin.register(Testimonial)
@@ -29,4 +29,4 @@ class RegistrationAdmin(admin.ModelAdmin):
 
 @admin.register(Guest)
 class GuestAdmin(admin.ModelAdmin):
-    list_display = ['id', 'event', 'guest_name', 'affiliation']
+    list_display = ['id', 'guest_name', 'affiliation']

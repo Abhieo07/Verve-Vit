@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -229,7 +230,7 @@ html, body {
 </style>
 <body>
   <video autoplay muted loop>
-    <source src="https://www.sample-videos.com/video123/mp4/720/big_buck_bunny_720p_20mb.mp4" type="video/mp4">
+    <source src="/media/sports.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
@@ -239,7 +240,8 @@ html, body {
         <div class="form-items">
             <h3>Book you a Slot</h3>
             <p>Fill in the data below.</p>
-            <form class="requires-validation" novalidate>
+            <form class="requires-validation" novalidate method="POST" action="{% url 'registration' event.id %}">
+              {% csrf_token %}
 
                 <div class="col-md-12">
                    <input class="form-control" type="text" name="name" placeholder="Full Name" required>
@@ -254,7 +256,7 @@ html, body {
                 </div>
 
                <div class="col-md-12">
-                    <select class="form-select mt-3" required>
+                    <select name="department" class="form-select mt-3" required>
                           <option selected disabled value="">Department</option>
                           <option value="cmpn">Computer</option>
                           <option value="etrx">Electronic</option>
@@ -281,13 +283,13 @@ html, body {
                <div class="col-md-12 mt-3">
                 <label class="mb-3 mr-1" for="gender">Gender: </label>
 
-                <input type="radio" class="btn-check" name="gender" id="male" autocomplete="off" required>
+                <input type="radio" class="btn-check" name="gender" id="male" value="male" autocomplete="off" required>
                 <label class="btn btn-sm btn-outline-secondary" for="male">Male</label>
 
-                <input type="radio" class="btn-check" name="gender" id="female" autocomplete="off" required>
+                <input type="radio" class="btn-check" name="gender" id="female" value="female" autocomplete="off" required>
                 <label class="btn btn-sm btn-outline-secondary" for="female">Female</label>
 
-                <input type="radio" class="btn-check" name="gender" id="secret" autocomplete="off" required>
+                <input type="radio" class="btn-check" name="gender" id="secret" value="secret" autocomplete="off" required>
                 <label class="btn btn-sm btn-outline-secondary" for="secret">Secret</label>
                    <div class="valid-feedback mv-up">You selected a gender!</div>
                     <div class="invalid-feedback mv-up">Please select a gender!</div>
@@ -311,33 +313,48 @@ html, body {
 
 
 <script>
-  (function () {
-      'use strict'
-      const forms = document.querySelectorAll('.requires-validation')
-      Array.from(forms)
-          .forEach(function (form) {
-              form.addEventListener('submit', function (event) {
-                  if (!form.checkValidity()) {
-                      event.preventDefault()
-                      event.stopPropagation()
-                  }
+(function () {
+    'use strict';
 
-                  form.classList.add('was-validated')
-              }, false)
-          })
+    const forms = document.querySelectorAll('.requires-validation');
 
-      const studentCheck = document.getElementById('studentCheck');
-      const collegeInput = document.querySelector('.college-input');
+    // Handle checkbox logic and form submission
+    Array.from(forms).forEach(function (form) {
+        const studentCheck = document.getElementById('studentCheck');
+        const collegeInput = document.querySelector('input[name="college"]');
+        const collegeInputContainer = document.querySelector('.college-input');
 
-      studentCheck.addEventListener('change', function () {
-          collegeInput.style.display = this.checked ? 'block' : 'none';
+        // Update college field when checkbox state changes
+        studentCheck.addEventListener('change', function () {
+            if (this.checked) {
+                collegeInputContainer.style.display = 'block';
+                collegeInput.value = ''; // Clear input
+                collegeInput.setAttribute('required', 'required'); // Enable validation
+            } else {
+                collegeInputContainer.style.display = 'none';
+                collegeInput.value = 'VIT Mumbai'; // Set default value
+                collegeInput.removeAttribute('required'); // Skip validation
+            }
+        });
 
-          // Reset college input value when unchecked
-          if (!this.checked) {
-              document.querySelector('input[name="college"]').value = '';
-          }
-      });
-  })();
+        // Ensure correct college value before form submission
+        form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+
+            form.classList.add('was-validated');
+        });
+
+        // Trigger the initial state
+        if (!studentCheck.checked) {
+            collegeInput.value = 'VIT'; // Set default value on page load
+            collegeInput.removeAttribute('required');
+        }
+    });
+})();
+
 </script>
 </body>
 </html>

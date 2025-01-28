@@ -43,15 +43,12 @@
         
                 <ul class="main-nav small-caps">
                     <li><a href="/">Home</a></li>
-                    <li><a href="about">About</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
                     <li><span>Gallery</span>
-                        <ul>
-                            <li><a href="#">Year 2021</a></li>
-                            <li><a href="gallery">Year 2022</a></li>
-                            <li><a href="#">year 2023</a></li>
+                        <ul id="gallery-years">
                         </ul>
                     </li>
-                    <li><a href="contact">Contact</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
                 </ul>
                 
             </div>
@@ -65,6 +62,15 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
     const navBar = document.querySelector('.nav-bar');
+    const galleryYears = document.getElementById('gallery-years');
+    const currentYear = new Date().getFullYear();
+
+    for (let i = 1; i <= 3; i++) {
+        const year = currentYear - i;
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `<a href="/gallery/${year}">Year ${year}</a>`;
+        galleryYears.appendChild(listItem);
+    }
 
     window.addEventListener('scroll', function () {
         if (window.scrollY > 0) {
