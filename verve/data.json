@@ -13,6 +13,71 @@
     }
 },
 {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2025-01-31T08:55:34.701Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "1",
+        "object_repr": "Tech Summit'25",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Title\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2025-01-31T11:27:28.935Z",
+        "user": 1,
+        "content_type": 15,
+        "object_id": "1",
+        "object_repr": "Sports",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2025-01-31T11:29:16.934Z",
+        "user": 1,
+        "content_type": 15,
+        "object_id": "2",
+        "object_repr": "Cultural",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2025-01-31T11:30:52.693Z",
+        "user": 1,
+        "content_type": 15,
+        "object_id": "3",
+        "object_repr": "Technical",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2025-01-31T19:26:06.509Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "1",
+        "object_repr": "Tech Summit 2025",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Title\"]}}]"
+    }
+},
+{
     "model": "auth.permission",
     "pk": 1,
     "fields": {
@@ -517,11 +582,47 @@
     }
 },
 {
+    "model": "auth.permission",
+    "pk": 57,
+    "fields": {
+        "name": "Can add carousel",
+        "content_type": 15,
+        "codename": "add_carousel"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 58,
+    "fields": {
+        "name": "Can change carousel",
+        "content_type": 15,
+        "codename": "change_carousel"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 59,
+    "fields": {
+        "name": "Can delete carousel",
+        "content_type": 15,
+        "codename": "delete_carousel"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 60,
+    "fields": {
+        "name": "Can view carousel",
+        "content_type": 15,
+        "codename": "view_carousel"
+    }
+},
+{
     "model": "auth.user",
     "pk": 1,
     "fields": {
         "password": "pbkdf2_sha256$870000$mrDsgYg2Y7f7D75PZpqqPg$iFzBxxyyVWRKB64Nd0ILnj14rdSG2OwqxAImx9jBvss=",
-        "last_login": "2025-01-15T20:11:33.214Z",
+        "last_login": "2025-01-29T21:00:21.875Z",
         "is_superuser": true,
         "username": "admin",
         "first_name": "",
@@ -644,6 +745,22 @@
     "fields": {
         "app_label": "core",
         "model": "activities"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 15,
+    "fields": {
+        "app_label": "core",
+        "model": "carousel"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "1s82zxpxo38b8dpodiis845ftgoex8sv",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSFMKQ9duu83kIFhpGpoUtqV8d-VpAtd3ntOzksE3LcS9pbXMJO4CBCn3y9ieuTaAd2x3haZlrqtc5RdkQdtclooP6-H-xco2ErPqkRMBN5hYkL23oAaMpHyJmrNFrR33-EseJ3ROcjqPPIwWmDDwOL9AfbyN9g:1tdFAb:RUOrJiun9DXewn_kdDZRj_YbWbUBdbuwodtgLuwBz-c",
+        "expire_date": "2025-02-12T21:00:21.878Z"
     }
 },
 {
@@ -793,12 +910,39 @@
     }
 },
 {
+    "model": "core.carousel",
+    "pk": 1,
+    "fields": {
+        "category": "Sports",
+        "vid_reg": "carousel/sport.mp4",
+        "vid_carousel": "carousel/sport2.mp4"
+    }
+},
+{
+    "model": "core.carousel",
+    "pk": 2,
+    "fields": {
+        "category": "Cultural",
+        "vid_reg": "carousel/1630-148614385_small.mp4",
+        "vid_carousel": "carousel/41823-431406517_small.mp4"
+    }
+},
+{
+    "model": "core.carousel",
+    "pk": 3,
+    "fields": {
+        "category": "Technical",
+        "vid_reg": "carousel/136259-764387660_tiny.mp4",
+        "vid_carousel": "carousel/52823-471089056_tiny.mp4"
+    }
+},
+{
     "model": "core.event",
     "pk": 1,
     "fields": {
         "title": "Tech Summit 2025",
-        "summary": "A conference on emerging technologies.",
-        "date": "2025-02-15",
+        "category": "Technical",
+        "date": "2025-02-15T20:14:28Z",
         "location": "New York City",
         "price": 100,
         "description": "A conference on emerging technologies.",
@@ -819,8 +963,8 @@
     "pk": 2,
     "fields": {
         "title": "AI Innovations",
-        "summary": "Exploring AI in various industries.",
-        "date": "2025-03-20",
+        "category": "Technical",
+        "date": "2025-03-20T16:15:13Z",
         "location": "San Francisco",
         "price": 150,
         "description": "Exploring AI in various industries.",
@@ -828,7 +972,11 @@
         "img": "default.png",
         "vid": "default.mp4",
         "incharge": 2,
-        "guest": [5,6,7]
+        "guest": [
+            5,
+            6,
+            7
+        ]
     }
 },
 {
@@ -836,8 +984,8 @@
     "pk": 3,
     "fields": {
         "title": "Cybersecurity Workshop",
-        "summary": "Hands-on training in cybersecurity.",
-        "date": "2025-04-10",
+        "category": "Technical",
+        "date": "2025-04-10T06:35:00Z",
         "location": "London",
         "price": 75,
         "description": "Hands-on training in cybersecurity.",
@@ -845,7 +993,12 @@
         "img": "default.png",
         "vid": "default.mp4",
         "incharge": 3,
-        "guest": [8,7,6,5]
+        "guest": [
+            5,
+            6,
+            7,
+            8
+        ]
     }
 },
 {
@@ -853,8 +1006,8 @@
     "pk": 4,
     "fields": {
         "title": "Healthcare Tech",
-        "summary": "Advancements in healthcare technology.",
-        "date": "2025-05-05",
+        "category": "Technical",
+        "date": "2025-05-05T22:31:57Z",
         "location": "Berlin",
         "price": 120,
         "description": "Advancements in healthcare technology.",
@@ -862,7 +1015,10 @@
         "img": "default.png",
         "vid": "default.mp4",
         "incharge": 4,
-        "guest": [4,3]
+        "guest": [
+            3,
+            4
+        ]
     }
 },
 {
@@ -870,8 +1026,8 @@
     "pk": 5,
     "fields": {
         "title": "Blockchain Summit",
-        "summary": "Exploring blockchain and its applications.",
-        "date": "2025-06-15",
+        "category": "Technical",
+        "date": "2025-06-15T14:15:37Z",
         "location": "Dubai",
         "price": 200,
         "description": "Exploring blockchain and its applications.",
@@ -879,7 +1035,11 @@
         "img": "default.png",
         "vid": "default.mp4",
         "incharge": 5,
-        "guest": [5,8,2]
+        "guest": [
+            2,
+            5,
+            8
+        ]
     }
 },
 {
@@ -887,8 +1047,8 @@
     "pk": 6,
     "fields": {
         "title": "Tech Expo 2024",
-        "summary": "Showcasing the latest in tech.",
-        "date": "2024-10-20",
+        "category": "Technical",
+        "date": "2024-10-20T19:06:06Z",
         "location": "Tokyo",
         "price": 50,
         "description": "Showcasing the latest in tech.",
@@ -896,7 +1056,13 @@
         "img": "default.png",
         "vid": "default.mp4",
         "incharge": 6,
-        "guest": [1,2,6,7,8]
+        "guest": [
+            1,
+            2,
+            6,
+            7,
+            8
+        ]
     }
 },
 {
@@ -904,8 +1070,8 @@
     "pk": 7,
     "fields": {
         "title": "Robotics Fair",
-        "summary": "Exploring the world of robotics.",
-        "date": "2024-11-25",
+        "category": "Technical",
+        "date": "2024-11-25T12:45:35Z",
         "location": "Singapore",
         "price": 80,
         "description": "Exploring the world of robotics.",
@@ -913,7 +1079,9 @@
         "img": "default.png",
         "vid": "default.mp4",
         "incharge": 1,
-        "guest": [5]
+        "guest": [
+            5
+        ]
     }
 },
 {
@@ -921,8 +1089,8 @@
     "pk": 8,
     "fields": {
         "title": "EdTech Conference",
-        "summary": "Innovations in education technology.",
-        "date": "2024-12-15",
+        "category": "Technical",
+        "date": "2024-12-15T19:22:17Z",
         "location": "Sydney",
         "price": 90,
         "description": "Innovations in education technology.",
@@ -930,7 +1098,11 @@
         "img": "default.png",
         "vid": "default.mp4",
         "incharge": 2,
-        "guest": [2,4,6]
+        "guest": [
+            2,
+            4,
+            6
+        ]
     }
 },
 {

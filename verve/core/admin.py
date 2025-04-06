@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Contact, Event, Activities, Testimonial, Gallery, Registration, Guest
+from .models import Contact, Event, Activities, Testimonial, Gallery, Registration, Guest, Carousel
 
 # Register your models here
 
@@ -30,3 +30,7 @@ class RegistrationAdmin(admin.ModelAdmin):
 @admin.register(Guest)
 class GuestAdmin(admin.ModelAdmin):
     list_display = ['id', 'guest_name', 'affiliation']
+
+@admin.register(Carousel)
+class CarouselAdmin(admin.ModelAdmin):
+    list_display = ['id', 'category']

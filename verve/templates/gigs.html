@@ -10,11 +10,13 @@
 
   <style>
     .container-cards {
-      background-color: #292323;
+      font-family: 'Oswald', sans-serif;
+      background-color: inherit;
       position: relative;
       max-width: 100%;
       padding-left: 2%;
       padding-right: 2%;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
     }
     widget {
       filter: drop-shadow(1px 1px 3px rgb(170, 226, 231));
@@ -69,7 +71,7 @@
         padding-top: 5%;
         display: flex;
         justify-content: space-between;
-        background-color: #2196F3; /* Blue */
+        background-color: #7dcfb6; /* Blue */
         color: white;
         .price {
           text-align: right;
@@ -91,11 +93,15 @@
         display: flex;
         font-size: 80%;
         font-weight: bold;
-        background-color: #f44336;
+        background-color: #bf4342;
         padding: 2% 4%;
         border-radius: 15px;
         color: white;
         text-decoration: none;
+      }
+      .buy:hover{
+        transform: scale(1.05);
+        background-color: #8c1c13;
       }
       }
       .-bold {
@@ -138,15 +144,15 @@
 
     /* Define different colors for each ticket */
     .swiper-slide:nth-child(odd) .top {
-      background-color: #673ab7; /* Purple */
+      background-color: #606c38;
     }
 
     .swiper-slide:nth-child(even) .top {
-      background-color: #ff9800; /* Orange */
+      background-color: #d4a373;
     }
 
     .swiper-slide:nth-child(3n) .top {
-      background-color: #e91e63; /* Pink */
+      background-color: #264653;
     }
     @media (max-width: 768px) {
       .swiper-button-next,
@@ -154,14 +160,117 @@
         display: none;
       }
     }
+
+    .heading {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 2rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+    margin: 0; /* No margin */
+    padding: 0; /* No padding */
+    background-color: inherit; /* Inherit background color */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2));
+}
+
+.heading span {
+    display: inline-block;
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 1;
+    position: relative;
+    z-index: 2; /* Ensure text stays above the bubbles */
+}
+
+.bubbles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1; /* Place bubbles below text */
+}
+
+.bubble {
+    position: absolute;
+    top: 50%; /* Start bubbles from the middle vertically */
+    left: -50px; /* Start bubbles off-screen to the left */
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    animation: bubbles 5s infinite linear;
+    opacity: 0;
+}
+
+/* Bubble animation */
+@keyframes bubbles {
+    0% {
+        transform: translateX(-50px) translateY(-50%); /* Start off-screen to the left */
+        opacity: 0;
+    }
+    10% {
+        opacity: 1; /* Fade in quickly */
+    }
+    90% {
+        opacity: 1; /* Stay visible */
+    }
+    100% {
+        transform: translateX(calc(100vw + 50px)) translateY(-50%); /* Move off-screen to the right */
+        opacity: 0;
+    }
+}
+
+/* Different bubble sizes and speeds */
+.bubble:nth-child(1) {
+    width: 10px;
+    height: 10px;
+    animation-delay: 0s;
+    animation-duration: 5s;
+}
+.bubble:nth-child(2) {
+    width: 15px;
+    height: 15px;
+    animation-delay: 1s;
+    animation-duration: 6s;
+}
+.bubble:nth-child(3) {
+    width: 12px;
+    height: 12px;
+    animation-delay: 2s;
+    animation-duration: 7s;
+}
+.bubble:nth-child(4) {
+    width: 8px;
+    height: 8px;
+    animation-delay: 1.5s;
+    animation-duration: 5.5s;
+}
+.bubble:nth-child(5) {
+    width: 14px;
+    height: 14px;
+    animation-delay: 2.5s;
+    animation-duration: 6.5s;
+}
   </style>
 </head>
 
 <body>
 
+  <div class="heading">
+    <span><h2>Upcoming Gigs</h2></span>
+    <div class="bubbles-container">
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+  </div>
+</div>
 
   <div class="container-cards">
-    <h2 class="float-start">Upcoming Gigs</h2>
     <div class="swiper-container">
       <div class="swiper-wrapper">
         <!-- Add your train ticket items here -->
@@ -172,11 +281,11 @@
               <a href="{% url 'event' gig.id %}">
               <div class="top --flex-column">
                 <div class="bandname -bold">{{ gig.title }}</div>
-                <div class="tourname">{{ gig.summary }}</div>
+                <div class="tourname">{{ gig.category }}</div>
                 <img src="{{ gig.img.url }}" alt="{{ gig.title }}" />
                 <div class="deetz --flex-row-j!sb">
                   <div class="event --flex-column">
-                    <div class="date">{{ gig.date }}</div>
+                    <div class="date">{{ gig.date|date }}</div>
                     <div class="location -bold">{{ gig.location }}</div>
                   </div>
                   <div class="price --flex-column">

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ event.title }} - Ticket</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: white;
+            color: black;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .ticket {
+            width: 600px;
+            border: 2px solid black;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .bandname {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .tourname {
+            font-size: 18px;
+            color: #ff8800;
+            margin-bottom: 10px;
+        }
+
+        .event-info {
+            text-align: left;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .qr-code {
+            margin-top: 20px;
+            width: 120px;
+            height: 120px;
+        }
+    </style>
+</head>
+<body>
+    <div class="ticket">
+        <div class="bandname">{{ event.title }}</div>
+        <div class="tourname">{{ event.category }}</div>
+
+        <img src="{{ event.img.url }}" width="300" height="150" alt="{{ event.title }}" />
+
+        <div class="event-info">
+            <p><strong>Date:</strong> {{ event.date }}</p>
+            <p><strong>Location:</strong> {{ event.location }}</p>
+            <p><strong>Price:</strong> ${{ event.price }}</p>
+            <p><strong>Participant:</strong> {{ registration.participant_name }}</p>
+            <p><strong>College:</strong> {{ registration.college }}</p>
+        </div>
+
+        <img class="qr-code" src="data:image/png;base64,{{ qr_code }}" alt="QR Code" />
+    </div>
+</body>
+</html>

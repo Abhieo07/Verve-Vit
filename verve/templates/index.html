@@ -4,9 +4,14 @@
 {% block content %}
 
 <style>
-  /* html,body{
-    background-color: #0b101a;
-  } */
+
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap');
+
+  html, body {
+    background-color: #0e1318;
+    
+    font-family:  'Cinzel', serif;
+  }
   .carousel {
     height: 75vh;
     min-width: 100%;
@@ -15,18 +20,61 @@
   }
   .carousel-item {
     height: 100vh;
+    position: relative;
   }
 
   .carousel-caption {
     position: absolute;
-    left: 0;
-    right: 50%; /* Occupy the left half of the container */
-    top: 50%;
-    transform: translateY(-50%);
-    color: #fff; /* Text color */
+    left: 5%;
+    top: 10%;
+    text-align: left;
     z-index: 1;
-    overflow: hidden; /* Hide overflow content from the blurred part */
+    color: #fff;
+    width: 50%;
+    margin-bottom: 5%;
   }
+
+  .carousel-heading {
+        position: relative;
+        display: inline-flex;
+        margin-bottom: 2rem;
+    }
+
+    .main-title {
+        font-family: 'Volkhorn', serif;
+        font-size: 8rem;
+        font-stretch: extra-expanded;
+        font-weight: 800;
+        color: #839b7f;
+        text-transform: uppercase;
+        z-index: 1; /* Keep it behind sub-title */
+        transform: scaleY(2.5);
+        text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+    }
+
+    .sub-title {
+        font-family: 'Cinzel', serif;
+        font-size: 2rem;
+        font-weight: 300;
+        color: rgb(88, 32, 32);
+        font-weight: 300;
+        text-transform: uppercase;
+        position: absolute;
+        top: 42%;
+        left: 51%;
+        transform: translateX(-50%) scaleY(1.25) scaleX(1.5); /* Adds vertical stretch */
+        z-index: 2; /* Ensure subtitle is on top of main title */
+    }
+
+  .text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 200;
+    overflow: hidden;
+    display: inline-block;
+    max-width: 100%;
+  }
+
 
   .blur-background {
     position: absolute;
@@ -34,13 +82,13 @@
     left: 0;
     width: 100%; /* Adjust the width of the blurred area */
     height: 100%;
-    /* backdrop-filter: blur(5px); Adjust the blur amount as needed */
+    backdrop-filter: blur(2px); /*Adjust the blur amount as needed*/
     background: linear-gradient(to left, rgba(0,0,0, 0) 0%, rgba(0,0,0, 1) 100%);
-    /* background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%); */
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
     z-index: 0;
   }
 
-  .carousel-item img {
+  .carousel-item img, .carousel-item video {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -57,7 +105,34 @@
   }
   .about{
     padding: 1%;
-    background-color: #000;
+    background-color: inherit;
+  }
+
+  @media (max-width: 768px) {
+    .carousel-heading {
+      height: 10%;
+      margin-bottom: 2rem;
+    }
+
+    .main-title {
+      margin-top: 0.5rem;
+      font-size: 3rem;
+      transform: scaleY(2.5);
+      line-height: 1;
+    }
+
+    .sub-title {
+      font-size: 1.8rem;
+      transform: translateX(-20%) translateY(90%) scaleY(1.25) scaleX(1.5);
+      margin-top: 1rem;
+      color: rgb(114, 33, 33);
+      font-weight: 300;
+    }
+
+    .text {
+      margin-top: 2rem;
+      font-size: 1rem;
+    }
   }
 </style>
 
@@ -72,39 +147,161 @@
       <div class="carousel-item active">
         <div class="blur-background"></div>
         <video autoplay muted loop>
-          <source src="/media/sports2.mp4" type="video/mp4">
+          <source src="{{ sports_url }}" type="video/mp4">
           Your browser does not support the video tag.
         </video>
         <div class="carousel-caption">
-            <h1>interaction</h1>
-            <p>One - One interaction whichever meadium you'd like.</p>
-        </div>    
+          <div class="carousel-heading">
+              <b class="main-title">Sports</b>
+              <p class="sub-title">Council</p>
+          </div>
+          <p class="text" id="text1"></p>
+      </div>    
       </div>
       <div class="carousel-item">
         <div class="blur-background"></div>
-        <img src="https://wallpapers.com/images/hd/spider-man-cool-su1wjfkhwoi1b9ha.jpg" class="img-fluid" alt="Image 2">
+        <video autoplay muted loop>
+            <source src="{{ cultural_url }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
         <div class="carousel-caption">
-            <h1>Second slide label</h1>
-            <p>Some representative placeholder content for the first slide.</p>
+            <div class="carousel-heading">
+                <b class="main-title">Cultural</b>
+                <p class="sub-title">Council</p>
+            </div>
+            <p class="text" id="text2"></p>
         </div>        
-      </div>
-      <div class="carousel-item">
+    </div>
+    <div class="carousel-item">
         <div class="blur-background"></div>
-        <img src="https://wallpapers.com/images/hd/spider-man-cool-9xyzta67zii3hvvs.jpg" class="img-fluid" alt="image 3">
+        <video autoplay muted loop>
+            <source src="{{ technical_url }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
         <div class="carousel-caption">
-            <h1>Third slide label</h1>
-            <p>Some representative placeholder content for the first slide.</p>
+            <div class="carousel-heading">
+                <b class="main-title">Technical</b>
+                <p class="sub-title">Council</p>
+            </div>
+            <p class="text" id="text3"></p>
         </div>        
-      </div>
+    </div>
     </div>
   </div>
 </div>
+<script>
+  function typeWriterEffect(id, text, speed) {
+      let i = 0;
+      function type() {
+          if (i < text.length) {
+              document.getElementById(id).innerHTML += text.charAt(i);
+              i++;
+              setTimeout(type, speed);
+          }
+      }
+      type();
+  }
+
+  // Descriptions for each slide
+  let text1 = "Unleash the spirit of competition! The Sports Council promotes teamwork, endurance, and passion for athletics. Be part of exhilarating tournaments and events.";
+  let text2 = "Culture breathes life into college! The Cultural Council is a hub for creativity, dance, music, and drama. Celebrate diversity and showcase your artistic side!";
+  let text3 = "Innovation starts here! The Technical Council fosters cutting-edge ideas, hackathons, and projects that push the boundaries of technology.";
+
+  // Start the typewriter effect for each caption
+  setTimeout(() => typeWriterEffect("text1", text1, 50), 500);
+  setTimeout(() => typeWriterEffect("text2", text2, 50), 2500);
+  setTimeout(() => typeWriterEffect("text3", text3, 50), 4500);
+</script>
+
+<style>
+  #about-section {
+    text-align: center;
+    padding: 1.2rem;
+    background: linear-gradient(135deg, rgba(14, 19, 24, 0.9), rgba(14, 19, 24, 0.7));
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    position: relative;
+  }
+
+  #about-section h1 {
+    font-family: 'Cinzel', serif;
+    color: #ffc33c; /* Gold color */
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  #about-section p {
+    font-family: 'Playfair Display', serif;
+    color: #f0f0f0;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Add a decorative overlay */
+  #about-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 195, 60, 0.1) 10%, transparent 50%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* Add a glowing border effect */
+  #about-section::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    border-radius: 20px;
+    background: linear-gradient(45deg, #ffc33c, #ff6b6b, #6b6bff, #6bff6b);
+    z-index: 0;
+    animation: rotateBorder 8s linear infinite;
+    filter: blur(10px);
+  }
+
+  @keyframes rotateBorder {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    #about-section {
+      padding: 1.5rem;
+    }
+
+    #about-section h1 {
+      font-size: 2.5rem;
+    }
+
+    #about-section p {
+      font-size: 1rem;
+    }
+  }
+</style>
+
 <div class="cards row">
   {% include 'gigs.html' %}
 </div>
 <div class="about row">
   <div id="about-section" class="col-md-3">
     <h1>Verve - Vit</h1>
+    <p> Where Tradition Meets Innovation, Celebrating Culture, Creativity, and Community.</p>
   </div>
   <div class="col-md-9">
     {% include 'highligts.html' %}

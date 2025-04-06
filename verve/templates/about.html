@@ -2,24 +2,76 @@
 {% block title %} About Us {% endblock %}
 {% block content %}
 <style>
-    html, body{
+    html, body {
+      font-family: 'Cinzel', serif;
+      background-color: #3e5c76;
       background: linear-gradient(to bottom, #0d0e10, #646a78);
     }
+    p {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      color: #f0f0f0;
+    }
     .about {
-      margin:0;
-      color:#fff;
-      padding: 6% 10% 6% 10%;
+      margin: 0;
+      color: #fff;
+      padding: 10% 5%;
+    }
+    .about h1 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #ffc33c;
+      margin-bottom: 2%;
+      text-transform: uppercase;
+    }
+    .about h2 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ffc33c;
+      margin-top: 4%;
+      margin-bottom: 2%;
+      text-transform: uppercase;
+    }
+    .about address {
+      font-style: normal;
+      font-size: 1rem;
+      color: #f0f0f0;
+      margin-bottom: 4%;
+    }
+    .about ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .about ul li {
+      font-size: 1.2rem;
+      color: #f0f0f0;
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+    }
+    .about ul li::before {
+      content: "•";
+      color: #ffc33c;
+      font-size: 1.5rem;
+      position: absolute;
+      left: 0;
+      top: -2px;
     }
     #h-testimonials {
       display: flex;
       flex-direction: column;
-      padding: 0 10% 0 10%;
-      color:#fff;
+      padding: 0 10%;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #ffc33c;
+      margin-bottom: 2%;
+      text-transform: uppercase;
     }
     .demo {
-      padding: 2% 18% 2% 18%;
+      padding: 2% 18%;
     }
-    .testimonial{
+    .testimonial {
       padding: 35px 50px;
       margin: 0 20px 30px;
       border-radius: 0 70px 0 70px;
@@ -28,7 +80,7 @@
       border-right: none;
       text-align: center;
     }
-    .testimonial .pic{
+    .testimonial .pic {
       display: inline-block;
       width: 100px;
       height: 100px;
@@ -36,12 +88,12 @@
       margin-bottom: 20px;
       overflow: hidden;
     }
-    .testimonial .pic img{
+    .testimonial .pic img {
       object-fit: fill;
       width: 100%;
       height: 100px;
     }
-    .testimonial .title{
+    .testimonial .title {
       display: block;
       margin: 0 0 7px 0;
       font-size: 20px;
@@ -50,34 +102,34 @@
       letter-spacing: 1px;
       text-transform: uppercase;
     }
-    .testimonial .post{
+    .testimonial .post {
       display: block;
       font-size: 15px;
       color: grey;
       text-transform: capitalize;
       margin-bottom: 20px;
     }
-    .testimonial .description{
+    .testimonial .description {
       font-size: 16px;
       color: #fff;
       line-height: 30px;
     }
-    .owl-theme .owl-controls{ margin-top: 0; }
-    .owl-theme .owl-controls .owl-page span{
+    .owl-theme .owl-controls { margin-top: 0; }
+    .owl-theme .owl-controls .owl-page span {
       background: #fff;
       opacity: 0.8;
       transition: all 0.3s ease 0s;
     }
-    .owl-theme .owl-controls .owl-page.active span{ background: #ffc33c; }
-    @media(max-width:640px){
-        .about{
-            padding-top:18%;
-        }
-      .demo{
+    .owl-theme .owl-controls .owl-page.active span { background: #ffc33c; }
+    @media (max-width: 640px) {
+      .about {
+        padding-top: 18%;
+      }
+      .demo {
         padding: 2%;
         margin: 0;
       }
-      .testimonial{
+      .testimonial {
         padding: 3%;
         margin: 0;
         margin-bottom: 5%;
@@ -88,21 +140,45 @@
 <body>
     <div class="about row d-flex">
       <h1>Verve Vit</h1>
-      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium ad asperiores at atque culpa dolores eaque fugiat hic illo ipsam ipsum minima modi necessitatibus nemo officia, omnis perferendis placeat sit vitae, consectetur adipisicing elit ipsam.
-        Kristina
+      <p>
+        Verve-Vit is the annual cultural extravaganza of <strong>Vidyalankar Institute of Technology (VIT)</strong>, Wadala, Mumbai. Known as one of the most anticipated festivals in the city, Verve-Vit brings together students from colleges across Mumbai and beyond to celebrate art, music, dance, drama, and creativity. With its vibrant atmosphere, star-studded performances, and a plethora of events, Verve-Vit provides a platform for students to showcase their talents and create unforgettable memories.
       </p>
-      <Address>
-        --Address--
-      </Address>
+      <address>
+        Vidyalankar Institute of Technology,<br>
+        Vidyalankar College Marg, Wadala (East),<br>
+        Mumbai - 400037, Maharashtra, India.
+      </address>
+
+      <h2>Key Features</h2>
+      <ul>
+        <li><strong>Events & Competitions:</strong> Dance, music, drama, fine arts, literary events, fashion shows, and informal games.</li>
+        <li><strong>Celebrity Performances:</strong> Star-studded performances by renowned artists and bands.</li>
+        <li><strong>Workshops & Exhibitions:</strong> Interactive workshops and creative exhibitions.</li>
+        <li><strong>Social Causes:</strong> Initiatives focused on social awareness and community service.</li>
+        <li><strong>Food & Fun:</strong> Food stalls, gaming zones, and recreational activities.</li>
+      </ul>
+
+      <h2>Venue & Timing</h2>
+      <p>
+        Verve-Vit is held at <strong>Vidyalankar Institute of Technology, Wadala, Mumbai</strong>. The festival typically spans <strong>2-3 days</strong>, usually in <strong>February or March</strong>. Stay tuned for the exact dates and schedule!
+      </p>
+
+      <h2>How to Participate</h2>
+      <p>
+        Students from other colleges can participate by registering for events through the official Verve-Vit website or on-campus registration desks. Whether you're a dancer, singer, artist, or just someone looking to have fun, Verve-Vit has something for everyone. Join us and be a part of this incredible celebration of talent and creativity!
+      </p>
+
       <h2>Work Experiences</h2>
-      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium ad asperiores at atque culpa dolores eaque fugiat hic illo ipsam ipsum minima modi necessitatibus nemo officia, omnis perferendis placeat sit vitae, consectetur adipisicing elit ipsam.
-      Kristina
+      <p>
+        Verve-Vit is more than just a festival; it's a learning experience. Students involved in organizing the event gain invaluable skills in teamwork, leadership, event management, and problem-solving. From coordinating events to managing sponsorships and handling logistics, the festival offers a real-world experience that prepares students for future challenges. Many alumni credit their Verve-Vit experiences as a cornerstone of their personal and professional growth.
       </p>
-      <h2>Sponsers</h2>
-      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium ad asperiores at atque culpa dolores eaque fugiat hic illo ipsam ipsum minima modi necessitatibus nemo officia, omnis perferendis placeat sit vitae, consectetur adipisicing elit ipsam.
-        Kristina
+
+      <h2>Sponsors</h2>
+      <p>
+        Verve-Vit is made possible by the generous support of our sponsors. Over the years, we have partnered with leading brands and organizations that share our vision of promoting creativity and talent. Our sponsors not only provide financial support but also contribute to the festival's success through their resources and expertise. We are proud to collaborate with companies that believe in empowering the youth and fostering innovation.
       </p>
     </div>
+
     <h1 id="h-testimonials">Testimonials</h1>
     <div class="demo">
       <div id="testimonial-slider" class="owl-carousel">
@@ -112,25 +188,25 @@
               <img src="{{ testimonial.profile_img.url }}" alt="{{ testimonial.author_name }}">
             </div>
             <h3 class="title">{{ testimonial.author_name }}</h3>
-            <span class="post">{{ testimonial.author_role }}</span>
+            <span class="post" style="color: #c5b38a;">{{ testimonial.author_role }}</span>
             <p class="description">
               {{ testimonial.content }}
             </p>
           </div>
         {% endfor %}
-        <div class="testimonial">
+        <!-- <div class="testimonial">
           <div class="pic">
             <img src="https://source.unsplash.com/1366x768?female,portrait">
           </div>
-        <h3 class="title">Kristina</h3>
-        <span class="post">Web Designer</span>
-        <p class="description">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium ad asperiores at atque culpa dolores eaque fugiat hic illo ipsam ipsum minima modi necessitatibus nemo officia, omnis perferendis placeat sit vitae, consectetur adipisicing elit ipsam.
-        </p>
-        </div>
+          <h3 class="title">Kristina</h3>
+          <span class="post">Web Designer</span>
+          <p class="description">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium ad asperiores at atque culpa dolores eaque fugiat hic illo ipsam ipsum minima modi necessitatibus nemo officia, omnis perferendis placeat sit vitae, consectetur adipisicing elit ipsam.
+          </p>
+        </div> -->
       </div>
     </div>
-  
+
   <script>
     $(document).ready(function(){
         $("#testimonial-slider").owlCarousel({

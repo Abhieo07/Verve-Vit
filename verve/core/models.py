@@ -18,13 +18,51 @@ class Guest(models.Model):
 
     def __str__(self):
         return f'{self.guest_name}'
+    
+class Carousel(models.Model):
+    CATEGORY_CHOICES = [
+        ('Cultural', 'Cultural'),
+        ('Technical', 'Technical'),
+        ('Sports', 'Sports'),
+    ]
+    category = models.CharField(
+        max_length=255,
+        choices=CATEGORY_CHOICES,
+        blank=True,
+    )
+    vid_reg = models.FileField(upload_to='carousel', default='default.mp4')
+    vid_carousel = models.FileField(upload_to='carousel', default='default.mp4')
+
+    def save(self,*args, **kwargs):
+        if Carousel.objects.filter(category=self.category).exists():
+            obj = Carousel.objects.get(category=self.category)
+            obj.vid_reg = self.vid_reg
+            obj.vid_carousel = self.vid_carousel
+            obj.save()
+        else:
+            super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f'{self.category}'
+    
 
 class Event(models.Model):
+    CATEGORY_CHOICES = [
+        ('Cultural', 'Cultural'),
+        ('Technical', 'Technical'),
+        ('Sports', 'Sports'),
+    ]
+     
     title = models.CharField(max_length=255)
-    summary = models.CharField(blank=True, max_length=255)
-    date = models.DateField()
+    category = models.CharField(
+        max_length=255,
+        choices=CATEGORY_CHOICES,
+        blank=True,
+    )
+    date = models.DateTimeField()
     location = models.CharField(max_length=255)
     price = models.IntegerField(default=0, blank=True)
+    summary = models.TextField(blank=True)
     description = models.TextField()
     participant_count = models.IntegerField(default=0)
     img = models.ImageField(upload_to='events_img', default='default.png', blank=True)
@@ -46,6 +84,7 @@ class Activities(models.Model):
     event = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='activities')
     title = models.CharField(max_length=255)
     description = models.TextField()
+    venue = models.TextField(blank=True, default='VIT Campus Gate 2')
     image = models.ImageField(upload_to='activity/', blank=True)
     video = models.FileField(upload_to='activity/', blank=True)
 
@@ -62,7 +101,8 @@ class Testimonial(models.Model):
         return f'{self.author_name}'
 
 class Gallery(models.Model):
-    image = models.ImageField(upload_to='gallery/')
+    # highligt = models.FileField(upload_to='gallery/', default="cartoon.mp4", blank=True)
+    image = models.ImageField(upload_to='gallery/', blank=True)
     video = models.FileField(upload_to='gallery/', blank=True)
     year = models.DateField()
 
